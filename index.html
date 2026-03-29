@@ -940,6 +940,11 @@
 </section>
 
 <!-- ── PUBLICATIONS ────────────────────────────────────────────── -->
+<!-- ============================================================
+     REPLACE the entire <section id="publications">...</section>
+     block in your index.html with everything below.
+     ============================================================ -->
+
 <section id="publications">
   <div class="section-header">
     <span class="section-label">Publications</span>
@@ -949,70 +954,470 @@
     <div class="section-rule"></div>
   </div>
 
-  <div class="pub-list">
-
-    <div class="pub-item reveal">
-      <div class="pub-number">2024</div>
-      <div class="pub-content">
-        <h4>Latent class analysis of pelvic pain subgroups differentially associated with endometriosis and inflammatory comorbidities</h4>
-        <div class="pub-meta"><em>Pain</em> (Impact Factor: 7.4) · 2024</div>
-        <div class="pub-tags">
-          <span class="pub-tag">LCA</span><span class="pub-tag">NIH-funded</span><span class="pub-tag">Clinical</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item reveal">
-      <div class="pub-number">2024</div>
-      <div class="pub-content">
-        <h4>LLM-based annotation systems for medical education assessment: Benchmarking GPT-4o Mini and RoBERTa against human raters</h4>
-        <div class="pub-meta"><em>JMIR Medical Education</em> · 2024–2025 (in preparation)</div>
-        <div class="pub-tags">
-          <span class="pub-tag">LLM</span><span class="pub-tag">NLP</span><span class="pub-tag">OSCE</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item reveal">
-      <div class="pub-number">2024</div>
-      <div class="pub-content">
-        <h4>Computer vision for automated behavioral assessment in OSCE clinical skills evaluation: Measurement invariance and fairness analyses</h4>
-        <div class="pub-meta">Presented at <em>AAMC 2024</em> and <em>AERA 2025</em></div>
-        <div class="pub-tags">
-          <span class="pub-tag">Computer Vision</span><span class="pub-tag">Fairness</span><span class="pub-tag">Assessment</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item reveal">
-      <div class="pub-number">2023–</div>
-      <div class="pub-content">
-        <h4>Interpretable machine learning framework for wearable data phenotyping: Cohort-level longitudinal characterization</h4>
-        <div class="pub-meta"><em>IEEE</em> (under review) · Stanford Prevention Research Center Collaboration</div>
-        <div class="pub-tags">
-          <span class="pub-tag">Wearables</span><span class="pub-tag">Stanford</span><span class="pub-tag">ML</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pub-item reveal">
-      <div class="pub-number">2016–</div>
-      <div class="pub-content">
-        <h4>25+ additional peer-reviewed publications in measurement, biostatistics, ML, and behavioral science</h4>
-        <div class="pub-meta">Michigan State University · University of New Mexico · Battle Creek VA</div>
-        <div class="pub-tags">
-          <span class="pub-tag">Psychometrics</span><span class="pub-tag">SEM</span><span class="pub-tag">MLM</span><span class="pub-tag">Causal Inference</span>
-        </div>
-      </div>
-    </div>
-
+  <!-- Filter bar -->
+  <div style="margin-bottom:2.5rem; display:flex; flex-wrap:wrap; gap:0.5rem;" id="pub-filters">
+    <button class="pub-filter-btn active" data-filter="all" onclick="filterPubs('all', this)">All (29)</button>
+    <button class="pub-filter-btn" data-filter="methods" onclick="filterPubs('methods', this)">Statistical Methods</button>
+    <button class="pub-filter-btn" data-filter="medical-ed" onclick="filterPubs('medical-ed', this)">Medical Education</button>
+    <button class="pub-filter-btn" data-filter="causal" onclick="filterPubs('causal', this)">Causal Inference / ITE</button>
+    <button class="pub-filter-btn" data-filter="public-health" onclick="filterPubs('public-health', this)">Public Health</button>
+    <button class="pub-filter-btn" data-filter="ml" onclick="filterPubs('ml', this)">ML / AI</button>
   </div>
+
+  <style>
+    .pub-filter-btn {
+      background: var(--card);
+      border: 1.5px solid var(--rule);
+      border-radius: 2px;
+      padding: 0.35rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .pub-filter-btn:hover,
+    .pub-filter-btn.active {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: #fff;
+    }
+    .pub-item { transition: opacity 0.3s ease, max-height 0.3s ease; }
+    .pub-item.hidden { display: none; }
+  </style>
+
+  <div class="pub-list" id="pub-list">
+
+    <!-- 2026 -->
+    <div class="pub-item reveal" data-cats="public-health methods">
+      <div class="pub-number">2026</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1080/17439760.2024.2394652" target="_blank" rel="noopener">
+            Character strengths and employment in persons with disabilities: A national survey study
+          </a>
+        </h4>
+        <div class="pub-meta">Lee, B., <strong>Chang, C.</strong>, Chun, J., Lee, G., Niemiec, R., &amp; Umucu, E. · <em>The Journal of Positive Psychology</em>, 21(1), 78–88.</div>
+        <div class="pub-tags"><span class="pub-tag">Disability</span><span class="pub-tag">Survey</span><span class="pub-tag">Employment</span></div>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="pub-item reveal" data-cats="causal ml">
+      <div class="pub-number">2025</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1007/s13218-024-00869-0" target="_blank" rel="noopener">
+            Predicting individual treatment effects: Challenges and opportunities for machine learning and artificial intelligence
+          </a>
+        </h4>
+        <div class="pub-meta">Jaki, T., <strong>Chang, C.</strong>, Kuhlemeier, A., &amp; Van Horn, M. L. · <em>KI – Künstliche Intelligenz</em>, 39(1), 27–32.</div>
+        <div class="pub-tags"><span class="pub-tag">ITE</span><span class="pub-tag">ML</span><span class="pub-tag">Personalized Medicine</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="medical-ed">
+      <div class="pub-number">2025</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1080/07853890.2024.2443812" target="_blank" rel="noopener">
+            Assessing the impact of clerkships on the growth of clinical knowledge
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong>, Laird-Fick, H. S., Mitchell, J. D., Parker, C., &amp; Solomon, D. · <em>Annals of Medicine</em>, 57(1), 2443812.</div>
+        <div class="pub-tags"><span class="pub-tag">Medical Education</span><span class="pub-tag">Clerkships</span><span class="pub-tag">Assessment</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="public-health">
+      <div class="pub-number">2025</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.3389/fpubh.2025.1613224" target="_blank" rel="noopener">
+            Housing status, mental health, and help-seeking among American Indian and Alaska Native Veterans in the Midwest
+          </a>
+        </h4>
+        <div class="pub-meta">Umucu, E., Lee, B., <strong>Chang, C.</strong>, &amp; Tsai, J. · <em>Frontiers in Public Health</em>, 13, 1613224.</div>
+        <div class="pub-tags"><span class="pub-tag">Veterans</span><span class="pub-tag">Mental Health</span><span class="pub-tag">Housing</span></div>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="pub-item reveal" data-cats="public-health methods">
+      <div class="pub-number">2024</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1002/ajcp.12741" target="_blank" rel="noopener">
+            Geographic and psychosocial correlates of homelessness or unstable housing among US veterans in the Midwest
+          </a>
+        </h4>
+        <div class="pub-meta">Umucu, E., Lee, B., <strong>Chang, C.</strong>, Szymkowiak, D., &amp; Tsai, J. · <em>American Journal of Community Psychology</em>, 74(1–2), 142–151.</div>
+        <div class="pub-tags"><span class="pub-tag">Veterans</span><span class="pub-tag">Housing</span><span class="pub-tag">Geospatial</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="methods public-health ml">
+      <div class="pub-number">2024</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1097/j.pain.0000000000003198" target="_blank" rel="noopener">
+            Subgroups of pelvic pain are differentially associated with endometriosis and inflammatory comorbidities: A latent class analysis
+          </a>
+        </h4>
+        <div class="pub-meta">Ghiasi, M., <strong>Chang, C.</strong>, Shafrir, A. L., Vitonis, A. F., et al. · <em>Pain</em>, 165(9), 2119–2129. <strong style="color:var(--amber)">[IF 7.4]</strong></div>
+        <div class="pub-tags"><span class="pub-tag">LCA</span><span class="pub-tag">NIH-funded</span><span class="pub-tag">Endometriosis</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="ml public-health">
+      <div class="pub-number">2024</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1038/s44303-024-00004-4" target="_blank" rel="noopener">
+            Tantalum oxide nanoparticles as versatile and high-resolution X-ray contrast agent for intraductal image-guided ablative procedure in rodent models of breast cancer
+          </a>
+        </h4>
+        <div class="pub-meta">Zaluzec, E. K., Kenyon, E., Volk, M., <strong>Chang, C.</strong>, et al. · <em>npj Imaging</em>, 2(1), 3.</div>
+        <div class="pub-tags"><span class="pub-tag">Imaging</span><span class="pub-tag">Cancer</span><span class="pub-tag">Nature</span></div>
+      </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="pub-item reveal" data-cats="public-health">
+      <div class="pub-number">2023</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.3389/fgene.2022.1051396" target="_blank" rel="noopener">
+            Placental circadian lincRNAs and spontaneous preterm birth
+          </a>
+        </h4>
+        <div class="pub-meta">Zhou, G., Fichorova, R. N., Holzman, C., Chen, B., <strong>Chang, C.</strong>, et al. · <em>Frontiers in Genetics</em>, 13, 1051396.</div>
+        <div class="pub-tags"><span class="pub-tag">Genomics</span><span class="pub-tag">Preterm Birth</span></div>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="pub-item reveal" data-cats="causal methods">
+      <div class="pub-number">2022</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1007/s10865-021-00256-4" target="_blank" rel="noopener">
+            Individual differences in the effects of the ACTION-PAC intervention: An application of personalized medicine in the prevention and treatment of obesity
+          </a>
+        </h4>
+        <div class="pub-meta">Kuhlemeier, A., Jaki, T., Jimenez, E. Y., Kong, A. S., <strong>Chang, C.</strong>, et al. · <em>Journal of Behavioral Medicine</em>, 45(2), 211–226.</div>
+        <div class="pub-tags"><span class="pub-tag">ITE</span><span class="pub-tag">Personalized Medicine</span><span class="pub-tag">Obesity</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="methods ml">
+      <div class="pub-number">2022</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1177/01466216211041376" target="_blank" rel="noopener">
+            glca: An R package for multiple-group latent class analysis
+          </a>
+        </h4>
+        <div class="pub-meta">Kim, Y., Jeon, S., <strong>Chang, C.</strong>, &amp; Chung, H. · <em>Applied Psychological Measurement</em>, 46(5), 439–441.</div>
+        <div class="pub-tags"><span class="pub-tag">R Package</span><span class="pub-tag">LCA</span><span class="pub-tag">Software</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="medical-ed">
+      <div class="pub-number">2022</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1097/ACM.0000000000004937" target="_blank" rel="noopener">
+            In Reply to Yates
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong>, Colón-Berlingeri, M., &amp; Mavis, B. · <em>Academic Medicine</em>, 97(10), 1430–1431.</div>
+        <div class="pub-tags"><span class="pub-tag">Medical Education</span><span class="pub-tag">Letter</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="medical-ed methods">
+      <div class="pub-number">2022</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1097/ACM.0000000000004931" target="_blank" rel="noopener">
+            Evaluation of peer comments for small-group discussion in curriculum with virtual and in-person settings using latent space social network models
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong>, Parker, C., Malinowski, R., Laird-Fick, H. S., &amp; Gold, J. · <em>Academic Medicine</em>, 97(11S), S159.</div>
+        <div class="pub-tags"><span class="pub-tag">Social Network</span><span class="pub-tag">Medical Education</span><span class="pub-tag">Latent Space</span></div>
+      </div>
+    </div>
+
+    <!-- 2021 -->
+    <div class="pub-item reveal" data-cats="causal methods">
+      <div class="pub-number">2021</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1177/09622802211033640" target="_blank" rel="noopener">
+            A permutation test for assessing the presence of individual differences in treatment effects
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong>, Jaki, T., Sadiq, M. S., Kuhlemeier, A., Feaster, D., Cole, N., et al. · <em>Statistical Methods in Medical Research</em>, 30(11), 2369–2381.</div>
+        <div class="pub-tags"><span class="pub-tag">ITE</span><span class="pub-tag">Permutation Test</span><span class="pub-tag">HTE</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="causal methods">
+      <div class="pub-number">2021</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1037/ccp0000603" target="_blank" rel="noopener">
+            Applying methods for personalized medicine to the treatment of alcohol use disorder
+          </a>
+        </h4>
+        <div class="pub-meta">Kuhlemeier, A., Desai, Y., Tonigan, A., Witkiewitz, K., Jaki, T., <strong>Chang, C.</strong>, &amp; Van Horn, M. L. · <em>Journal of Consulting and Clinical Psychology</em>, 89(4), 288–300.</div>
+        <div class="pub-tags"><span class="pub-tag">Personalized Medicine</span><span class="pub-tag">Alcohol Use</span><span class="pub-tag">ITE</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="medical-ed">
+      <div class="pub-number">2021</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1097/ACM.0000000000003720" target="_blank" rel="noopener">
+            Medical student progress examination performance and its relationship with metacognition, critical thinking, and self-regulated learning strategies
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong>, Colón-Berlingeri, M., Mavis, B., Laird-Fick, H. S., Parker, C., &amp; Solomon, D. · <em>Academic Medicine</em>, 96(2), 278–284.</div>
+        <div class="pub-tags"><span class="pub-tag">Medical Education</span><span class="pub-tag">Metacognition</span><span class="pub-tag">Assessment</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="medical-ed">
+      <div class="pub-number">2021</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1007/s40670-020-01091-9" target="_blank" rel="noopener">
+            Self-efficacy, academic motivation, and self-regulation: How do they predict academic achievement for medical students?
+          </a>
+        </h4>
+        <div class="pub-meta">Zheng, B., <strong>Chang, C.</strong>, Lin, C.-H., &amp; Zhang, Y. · <em>Medical Science Educator</em>, 31(1), 125–130.</div>
+        <div class="pub-tags"><span class="pub-tag">Medical Education</span><span class="pub-tag">Self-Efficacy</span></div>
+      </div>
+    </div>
+
+    <!-- 2020 -->
+    <div class="pub-item reveal" data-cats="medical-ed">
+      <div class="pub-number">2020</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.7717/peerj.9091" target="_blank" rel="noopener">
+            Assessing the growth in clinical skills using a progress clinical skills examination
+          </a>
+        </h4>
+        <div class="pub-meta">Laird-Fick, H. S., <strong>Chang, C.</strong>, Wang, L., Parker, C., Malinowski, R., Emery, M., &amp; Solomon, D. J. · <em>PeerJ</em>, 8, e9091.</div>
+        <div class="pub-tags"><span class="pub-tag">Medical Education</span><span class="pub-tag">OSCE</span><span class="pub-tag">Growth</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">2020</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1186/s12874-020-01148-y" target="_blank" rel="noopener">
+            Comparing multiple statistical software for multiple-indicator, multiple-cause modeling: An application of gender disparity in adult cognitive functioning using MIDUS II dataset
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong>, Gardiner, J., Houang, R., &amp; Yu, Y.-L. · <em>BMC Medical Research Methodology</em>, 20(1), 275.</div>
+        <div class="pub-tags"><span class="pub-tag">MIMIC</span><span class="pub-tag">SEM</span><span class="pub-tag">Software Comparison</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="methods ml">
+      <div class="pub-number">2020</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://arxiv.org/abs/2010.15368" target="_blank" rel="noopener">
+            Classification accuracy and parameter estimation in multilevel contexts: A study of conditional nonparametric multilevel latent class analysis
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong>, Kelly, K., Van Horn, M. L., Houang, R. T., Gardiner, J., Van Egeren, L., &amp; Wu, H.-C. · <em>arXiv</em>, 2010.15368.</div>
+        <div class="pub-tags"><span class="pub-tag">LCA</span><span class="pub-tag">Multilevel</span><span class="pub-tag">Classification</span></div>
+      </div>
+    </div>
+
+    <!-- 2019 -->
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">2019</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1177/0013164418791673" target="_blank" rel="noopener">
+            The effects of sample size on the estimation of regression mixture models
+          </a>
+        </h4>
+        <div class="pub-meta">Jaki, T., Kim, M., Lamont, A., George, M., <strong>Chang, C.</strong>, Feaster, D., &amp; Van Horn, M. L. · <em>Educational and Psychological Measurement</em>, 79(2), 358–384.</div>
+        <div class="pub-tags"><span class="pub-tag">Mixture Models</span><span class="pub-tag">Sample Size</span><span class="pub-tag">Regression</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="medical-ed">
+      <div class="pub-number">2019</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://www.researchgate.net/publication/341137060" target="_blank" rel="noopener">
+            Generalizability of a progress clinical skills examination and the assessment of the growth in clinical skills in a medical school curriculum with early clinical experiences
+          </a>
+        </h4>
+        <div class="pub-meta">Laird-Fick, H. S., <strong>Chang, C.</strong>, Wang, L., Parker, C., Malinowski, R., Emery, M., &amp; Solomon, D. · Conference Proceedings, 2019.</div>
+        <div class="pub-tags"><span class="pub-tag">Generalizability</span><span class="pub-tag">Clinical Skills</span></div>
+      </div>
+    </div>
+
+    <!-- 2018 -->
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">2018</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://www.researchgate.net/publication/327894736" target="_blank" rel="noopener">
+            Zero-inflated data analysis in R
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong> · <em>Journal of Education Research</em>, 289, 69–81.</div>
+        <div class="pub-tags"><span class="pub-tag">Zero-Inflated</span><span class="pub-tag">R</span><span class="pub-tag">Methods</span></div>
+      </div>
+    </div>
+
+    <!-- 2017 -->
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">2017</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://www.researchgate.net/publication/313867648" target="_blank" rel="noopener">
+            Application of nonparametric multilevel latent class analysis to Opportunity to Learn (OTL) classification of future mathematics teachers in the TEDS-M dataset
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong> · <em>Journal of Education Research</em>, 273, 98–111.</div>
+        <div class="pub-tags"><span class="pub-tag">LCA</span><span class="pub-tag">Multilevel</span><span class="pub-tag">OTL</span></div>
+      </div>
+    </div>
+
+    <!-- 2016 -->
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">2016</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1080/10705511.2015.1100351" target="_blank" rel="noopener">
+            Examining population heterogeneity in finite mixture settings using latent variable modeling
+          </a>
+        </h4>
+        <div class="pub-meta">Raykov, T., Marcoulides, G. A., &amp; <strong>Chang, C.</strong> · <em>Structural Equation Modeling: A Multidisciplinary Journal</em>, 23(5), 726–730.</div>
+        <div class="pub-tags"><span class="pub-tag">SEM</span><span class="pub-tag">Mixture Models</span><span class="pub-tag">Latent Variable</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="ml methods">
+      <div class="pub-number">2016</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.3102/0034654316628645" target="_blank" rel="noopener">
+            Learning in one-to-one laptop environments: A meta-analysis and research synthesis
+          </a>
+        </h4>
+        <div class="pub-meta">Zheng, B., Warschauer, M., Lin, C.-H., &amp; <strong>Chang, C.</strong> · <em>Review of Educational Research</em>, 86(4), 1052–1084.</div>
+        <div class="pub-tags"><span class="pub-tag">Meta-Analysis</span><span class="pub-tag">Technology</span><span class="pub-tag">Education</span></div>
+      </div>
+    </div>
+
+    <!-- 2013 -->
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">2013</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1177/0013164413486269" target="_blank" rel="noopener">
+            Studying differential item functioning via latent variable modeling: A note on a multiple-testing procedure
+          </a>
+        </h4>
+        <div class="pub-meta">Raykov, T., Marcoulides, G. A., Lee, C.-L., &amp; <strong>Chang, C.</strong> · <em>Educational and Psychological Measurement</em>, 73(5), 898–908.</div>
+        <div class="pub-tags"><span class="pub-tag">DIF</span><span class="pub-tag">IRT</span><span class="pub-tag">Psychometrics</span></div>
+      </div>
+    </div>
+
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">2013</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://doi.org/10.1177/0013164413497010" target="_blank" rel="noopener">
+            A commentary on the relationship between model fit and saturated path models in structural equation modeling applications
+          </a>
+        </h4>
+        <div class="pub-meta">Raykov, T., Lee, C.-L., Marcoulides, G. A., &amp; <strong>Chang, C.</strong> · <em>Educational and Psychological Measurement</em>, 73(6), 1054–1068.</div>
+        <div class="pub-tags"><span class="pub-tag">SEM</span><span class="pub-tag">Model Fit</span><span class="pub-tag">Psychometrics</span></div>
+      </div>
+    </div>
+
+    <!-- 2005 -->
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">2005</div>
+      <div class="pub-content">
+        <h4>
+          Female students' sense of convenience of campus space in National Kaohsiung Normal University
+        </h4>
+        <div class="pub-meta">Zheng, G. Y., Liu, Y. W., <strong>Chang, C.</strong>, Jen, C. T., Yen, W. C., &amp; Lin, T. H. · <em>Journal of South Geographic</em>, 8, 105–125.</div>
+        <div class="pub-tags"><span class="pub-tag">Campus</span><span class="pub-tag">Gender</span><span class="pub-tag">Early Work</span></div>
+      </div>
+    </div>
+
+    <!-- Book -->
+    <div class="pub-item reveal" data-cats="methods">
+      <div class="pub-number">Book</div>
+      <div class="pub-content">
+        <h4>
+          <a href="https://www.proquest.com/docview/1791563039" target="_blank" rel="noopener">
+            Nonparametric multilevel latent class analysis with covariates: An approach to classification in multilevel contexts
+          </a>
+        </h4>
+        <div class="pub-meta"><strong>Chang, C.</strong> · Doctoral Dissertation, Michigan State University, 2016.</div>
+        <div class="pub-tags"><span class="pub-tag">Dissertation</span><span class="pub-tag">LCA</span><span class="pub-tag">Multilevel</span></div>
+      </div>
+    </div>
+
+    <!-- Working paper -->
+    <div class="pub-item reveal" data-cats="ml methods">
+      <div class="pub-number">2020</div>
+      <div class="pub-content">
+        <h4>
+          Early warning systems and targeted interventions for student success in online courses
+        </h4>
+        <div class="pub-meta">Glick, D., Cohen, A., &amp; <strong>Chang, C.</strong> · Working paper, 2020.</div>
+        <div class="pub-tags"><span class="pub-tag">Early Warning</span><span class="pub-tag">Online Learning</span></div>
+      </div>
+    </div>
+
+  </div><!-- end pub-list -->
 
   <div class="pub-note reveal">
-    <div class="pub-note-icon">📚</div>
-    <p>Complete publication list available via <a href="https://github.com/quantlover" target="_blank">GitHub</a> or upon request. PI/Co-I on $3M+ in funded research programs across NIH, NBME, AMA, VA, and foundation sources.</p>
+    <div class="pub-note-icon">📖</div>
+    <p>29 entries total, including 25+ peer-reviewed articles. Full citation list also available on
+      <a href="https://scholar.google.com/citations?user=QStTjUcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> and
+      <a href="https://www.researchgate.net/profile/Chi-Chang-4" target="_blank" rel="noopener">ResearchGate</a>.
+      PI/Co-I on $3M+ in funded programs.</p>
   </div>
+
 </section>
+
+<!-- Filter script — place before </body> or alongside the existing scroll reveal script -->
+<script>
+function filterPubs(cat, btn) {
+  document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#pub-list .pub-item').forEach(item => {
+    if (cat === 'all') {
+      item.classList.remove('hidden');
+    } else {
+      const cats = (item.dataset.cats || '').split(' ');
+      item.classList.toggle('hidden', !cats.includes(cat));
+    }
+  });
+}
+</script>
 
 <!-- ── TALKS / TEACHING ────────────────────────────────────────── -->
 <section id="talks">
@@ -1212,7 +1617,7 @@
           <div class="contact-link-value">chisq@msu.edu</div>
         </div>
       </a>
-      <a href="tel:+15175759990" class="contact-link">
+      <a href="tel:+15173533454" class="contact-link">
         <div class="contact-link-icon">☎</div>
         <div>
           <div class="contact-link-label">Phone</div>
