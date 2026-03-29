@@ -1,0 +1,20 @@
+# GitHub Pages configuration
+# Site deploys to: https://quantlover.github.io
+
+title: "Chi Chang, PhD — Precision Data Scientist"
+description: "Tenured Associate Professor. Dual-trained psychometrician and biostatistician. AI evaluation scientist at Michigan State University, Stanford Medicine, and UCSF."
+url: "https://quantlover.github.io"
+baseurl: ""
+author: "Chi Chang, PhD, MS"
+email: chisq@msu.edu
+
+# Build settings
+theme: null        # Using custom HTML/CSS — no Jekyll theme needed
+plugins: []
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - "*.gemspec"
