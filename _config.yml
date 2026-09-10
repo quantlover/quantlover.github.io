@@ -1,7 +1,7 @@
 # GitHub Pages configuration
-# Site deploys to: https://quantlover.github.io
+# Personal website hosted at: https://quantlover.github.io
 
-title: "Chi Chang, PhD — Precision Data Scientist"
+title: "Chi Chang, PhD"
 description: "Tenured Associate Professor. Dual-trained psychometrician and biostatistician. AI evaluation scientist at Michigan State University, Stanford Medicine, and UCSF."
 url: "https://quantlover.github.io"
 baseurl: ""

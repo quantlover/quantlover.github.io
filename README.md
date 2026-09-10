@@ -1,8 +1,8 @@
-# quantlover.github.io
+# Chi Chang — Personal Website
 
-Personal academic portfolio of **Chi Chang, PhD, MS** — Tenured Associate Professor, Michigan State University College of Human Medicine; Visiting Scholar, Stanford Medicine & UCSF.
+Personal academic website of **Chi Chang, PhD, MS** — Tenured Associate Professor, Michigan State University College of Human Medicine; Visiting Scholar, Stanford Medicine & UCSF.
 
-🔗 **Live site:** [https://quantlover.github.io](https://quantlover.github.io)
+🔗 **Live site:** [https://quantlover.github.io](https://quantlover.github.io) (GitHub Pages)
 
 ---
 

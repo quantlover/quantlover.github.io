@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chi Chang, PhD — Precision Data Scientist</title>
+  <title>Chi Chang, PhD</title>
+  <meta name="description" content="Tenured Associate Professor at Michigan State University. Dual-trained psychometrician and biostatistician applying precision measurement and machine learning to health, education, and behavioral science." />
+  <meta name="author" content="Chi Chang, PhD, MS" />
+  <link rel="canonical" href="https://quantlover.github.io/" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="Chi Chang, PhD" />
+  <meta property="og:description" content="Tenured Associate Professor. Precision measurement, psychometrics, and machine learning for high-stakes decisions in health and education." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://quantlover.github.io/" />
+  <meta property="og:image" content="https://quantlover.github.io/assets/chi-chang.jpg" />
+  <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
@@ -55,13 +65,17 @@
       justify-content: space-between;
     }
     .nav-brand {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--sage);
-      font-weight: 500;
+      font-family: var(--font-disp);
+      font-size: 1.08rem;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      line-height: 1;
     }
+    .nav-brand em {
+      font-style: italic;
+      color: var(--sage);
+    }
+    .nav-brand:hover { color: var(--ink); }
     .nav-links {
       display: flex;
       gap: 2rem;
@@ -787,7 +801,7 @@
 
 <!-- ── NAV ────────────────────────────────────────────────────── -->
 <nav>
-  <div class="nav-brand">quantlover.github.io</div>
+  <a href="#home" class="nav-brand">Chi <em>Chang</em></a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#news">News</a></li>
@@ -1843,8 +1857,8 @@ function filterPubs(cat, btn) {
 
 <!-- ── FOOTER ──────────────────────────────────────────────────── -->
 <footer>
-  <div>© 2026 Chi Chang, PhD — quantlover.github.io</div>
-  <div><a href="https://github.com/quantlover" target="_blank">github.com/quantlover</a></div>
+  <div>© 2026 Chi Chang, PhD</div>
+  <div><a href="https://github.com/quantlover" target="_blank" rel="noopener">GitHub</a></div>
 </footer>
 
 <!-- ── SCROLL REVEAL JS ────────────────────────────────────────── -->
