@@ -86,6 +86,9 @@
     }
     .nav-links a:hover { color: var(--sage); }
     .nav-links a:hover::after { right: 0; }
+    @media (max-width: 1120px) {
+      .nav-links { gap: 1.15rem; }
+    }
 
     /* ── HERO ────────────────────────────────────────────────── */
     #home {
@@ -308,6 +311,69 @@
       height: 1px;
       background: var(--rule);
       margin-bottom: 0.6rem;
+    }
+
+    /* ── NEWS ────────────────────────────────────────────────── */
+    #news {
+      background: var(--paper);
+      padding-top: clamp(3rem, 5vw, 4.5rem);
+      padding-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+    #news .section-header { margin-bottom: 1.75rem; }
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .news-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      border-radius: var(--r);
+      padding: 1.4rem 1.6rem 1.5rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .news-card:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      transform: translateY(-1px);
+    }
+    .news-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.55rem;
+    }
+    .news-date {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+    .news-tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      background: rgba(61,90,74,0.08);
+      border: 1px solid rgba(61,90,74,0.18);
+      border-radius: 2px;
+      padding: 0.12rem 0.5rem;
+    }
+    .news-card h3 {
+      font-family: var(--font-disp);
+      font-size: 1.28rem;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 0.45rem;
+    }
+    .news-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 62ch;
     }
 
     /* ── ABOUT ───────────────────────────────────────────────── */
@@ -724,6 +790,7 @@
   <div class="nav-brand">quantlover.github.io</div>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#publications">Publications</a></li>
@@ -779,6 +846,28 @@
         <div class="affil-line">Quant Quest — Founder & Owner</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── NEWS ────────────────────────────────────────────────────── -->
+<section id="news">
+  <div class="section-header">
+    <span class="section-label">News</span>
+    <div>
+      <div class="section-title">Recent <em>updates</em></div>
+    </div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="news-list">
+    <article class="news-card reveal">
+      <div class="news-meta">
+        <time class="news-date" datetime="2026-09">September 2026</time>
+        <span class="news-tag">Invited Talk</span>
+      </div>
+      <h3>Invited to speak at Hokkaido University</h3>
+      <p>I have been invited to Hokkaido University to give a talk on AI and scale development in healthy aging.</p>
+    </article>
   </div>
 </section>
 
@@ -1526,6 +1615,11 @@ function filterPubs(cat, btn) {
   <div class="talks-grid">
     <div class="talks-col">
       <h3>// Invited Talks & Presentations</h3>
+
+      <div class="talk-item reveal">
+        <div class="talk-title">AI and Scale Development in Healthy Aging</div>
+        <div class="talk-where"><span class="talk-year">2026</span>Hokkaido University, Japan — Invited talk</div>
+      </div>
 
       <div class="talk-item reveal">
         <div class="talk-title">Precision Medical Education: A Measurement Science Perspective</div>

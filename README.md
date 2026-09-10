@@ -11,6 +11,7 @@ Personal academic portfolio of **Chi Chang, PhD, MS** — Tenured Associate Prof
 | Page | Description |
 |------|-------------|
 | **Home** | Hero summary, key statistics, affiliations |
+| **News** | Recent invitations, talks, and announcements |
 | **About** | Research identity, methodology, technical skills |
 | **Projects** | Selected funded research projects |
 | **Publications** | Peer-reviewed scholarship |
