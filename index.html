@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Chi Chang, PhD</title>
   <meta name="description" content="Tenured Associate Professor at Michigan State University. Dual-trained psychometrician and biostatistician applying precision measurement and machine learning to health, education, and behavioral science." />
   <meta name="author" content="Chi Chang, PhD, MS" />
@@ -38,7 +38,7 @@
 
     /* ── RESET ───────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body {
       font-family: var(--font-body);
       background: var(--paper);
@@ -47,6 +47,7 @@
       line-height: 1.65;
       overflow-x: hidden;
     }
+    body.nav-open { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
 
@@ -55,14 +56,16 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(247,244,239,0.9);
+      background: rgba(247,244,239,0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--rule);
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      padding: 0 max(1.25rem, env(safe-area-inset-right)) 0 max(1.25rem, env(safe-area-inset-left));
       height: 58px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 0.75rem;
+      overflow: visible;
     }
     .nav-brand {
       font-family: var(--font-disp);
@@ -100,8 +103,39 @@
     }
     .nav-links a:hover { color: var(--sage); }
     .nav-links a:hover::after { right: 0; }
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      height: 36px;
+      border: 0;
+      border-radius: var(--r);
+      background: var(--sage);
+      color: #fff;
+      padding: 0 12px;
+      cursor: pointer;
+      margin-left: auto;
+      flex-shrink: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: fixed;
+      top: 11px;
+      right: max(12px, env(safe-area-inset-right));
+      z-index: 110;
+      box-shadow: 0 1px 8px rgba(61,90,74,0.25);
+    }
+    @media (min-width: 901px) {
+      .nav-toggle { display: none; }
+    }
     @media (max-width: 1120px) {
-      .nav-links { gap: 1.15rem; }
+      .nav-links { gap: 1.05rem; }
+      .nav-links a { font-size: 0.76rem; }
     }
 
     /* ── HERO ────────────────────────────────────────────────── */
@@ -116,7 +150,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-width: 0;
+      max-width: 100%;
     }
+    .hero-text > * { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
     .hero-eyebrow {
       font-family: var(--font-mono);
       font-size: 0.72rem;
@@ -125,6 +162,7 @@
       color: var(--amber);
       margin-bottom: 1.25rem;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 0.75rem;
     }
@@ -282,9 +320,11 @@
     .affil-line {
       font-size: 0.8rem;
       color: rgba(255,255,255,0.65);
-      display: flex;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 0.85rem minmax(0, 1fr);
+      align-items: start;
       gap: 0.5rem;
+      overflow-wrap: anywhere;
     }
     .affil-line::before {
       content: '▸';
@@ -495,6 +535,30 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem;
+    }
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .project-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0.4rem 0.85rem;
+      border: 1.5px solid var(--sage);
+      border-radius: var(--r);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .project-actions a:hover {
+      background: var(--sage);
+      color: #fff;
     }
     .project-year {
       font-family: var(--font-mono);
@@ -775,25 +839,66 @@
 
     /* ── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 900px) {
-      #home { grid-template-columns: 1fr; min-height: auto; }
+      #home { grid-template-columns: 1fr; min-height: auto; max-width: 100%; }
+      .hero-eyebrow { letter-spacing: 0.1em; row-gap: 0.2rem; }
       .hero-visual {
-        order: -1;
         min-height: auto;
-        padding: 2rem 1.5rem 2.2rem;
+        padding: 1.5rem 1.25rem 1.6rem;
+        overflow: visible;
       }
-      .hero-portrait { width: min(220px, 58%); margin-bottom: 1.1rem; }
-      .hero-stats { margin-bottom: 1rem; }
+      .hero-text { padding: 2rem 1.25rem 2.6rem; }
+      .hero-portrait { width: min(180px, 46%); margin-bottom: 1rem; }
+      .hero-stats { margin-bottom: 0.85rem; }
+      .affil-line, .stat-label { overflow-wrap: anywhere; }
       .about-grid { grid-template-columns: 1fr; }
       .talks-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .cv-grid { grid-template-columns: 1fr 1fr; }
-      .nav-links { gap: 1.2rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 58px; left: 0; right: 0;
+        z-index: 105;
+        flex-direction: column;
+        gap: 0;
+        background: var(--paper);
+        border-bottom: 1px solid var(--rule);
+        padding: 0.5rem 1.25rem calc(1.25rem + env(safe-area-inset-bottom));
+        max-height: calc(100vh - 58px);
+        overflow: auto;
+      }
+      .nav-links.is-open { display: flex; min-height: calc(100vh - 58px); }
+      .project-actions a { flex: 1 1 10rem; min-height: 44px; }
+      .nav-links a {
+        display: block;
+        font-size: 0.92rem;
+        padding: 0.85rem 0.15rem;
+        min-height: 44px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .nav-links a::after { display: none; }
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
     }
     @media (max-width: 640px) {
-      .nav-links { display: none; }
+      section { padding: 3rem 1.15rem; }
       .cv-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      h1 { font-size: 2.5rem; }
+      h1 { font-size: 2.15rem; }
+      .section-header { gap: 1rem; margin-bottom: 2rem; }
+      .section-title { font-size: 1.7rem; }
+      .hero-tagline { margin-bottom: 1.5rem; }
+      .stat { padding: 0.7rem 0.85rem; }
+      .stat-num { font-size: 1.45rem; }
+      .btn, .btn-cv, .contact-link, .project-actions a { min-height: 44px; }
+      .hero-title { font-size: 0.72rem; letter-spacing: 0.04em; }
+      .pub-item { grid-template-columns: 36px 1fr; gap: 0 0.85rem; }
+      .pub-filter-btn { min-height: 44px; padding: 0.45rem 0.9rem; }
+      .pub-content h4 { overflow-wrap: anywhere; }
+      .news-card h3, .project-card h3, .talk-title { overflow-wrap: anywhere; }
     }
   </style>
 </head>
@@ -802,7 +907,8 @@
 <!-- ── NAV ────────────────────────────────────────────────────── -->
 <nav>
   <a href="#home" class="nav-brand">Chi <em>Chang</em></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <ul class="nav-links" id="site-nav">
     <li><a href="#home">Home</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#about">About</a></li>
@@ -976,7 +1082,7 @@
 
   <div class="projects-grid">
 
-    <a href="ai-competency-census.html" class="project-card reveal" style="color:inherit">
+    <div class="project-card reveal">
       <div class="project-funder">National Census · 2026</div>
       <h3>U.S. Medical School AI Competency Census</h3>
       <p>Interactive national census of AI competency courses, curricula, and certificates across LCME-accredited U.S. MD programs, with learning objectives, competency domains, and assessment methods.</p>
@@ -985,8 +1091,12 @@
         <span class="tag">Medical Education</span>
         <span class="tag">National Census</span>
       </div>
+      <div class="project-actions">
+        <a href="ai-competency-census.html">Open census</a>
+        <a href="AI_Competency_Programs_US_Medical_Schools_2026_1.xlsx" download>Download Excel</a>
+      </div>
       <div class="project-year">// 2026 → Interactive map</div>
-    </a>
+    </div>
 
     <div class="project-card reveal">
       <div class="project-funder">NBME Funded · 2024–2025</div>
@@ -1899,6 +2009,25 @@ function filterPubs(cat, btn) {
       a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--sage)' : '';
     });
   });
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-links');
+  if (navToggle && navMenu) {
+    const closeNav = () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = 'Menu';
+      navMenu.classList.remove('is-open');
+      document.body.classList.remove('nav-open');
+    };
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      navToggle.textContent = open ? 'Menu' : 'Close';
+      navMenu.classList.toggle('is-open', !open);
+      document.body.classList.toggle('nav-open', !open);
+    });
+    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+  }
 </script>
 
 </body>
