@@ -14,6 +14,7 @@ Personal academic website of **Chi Chang, PhD, MS** — Tenured Associate Profes
 | **News** | Recent invitations, talks, and announcements |
 | **About** | Research identity, methodology, technical skills |
 | **Projects** | Selected funded research projects |
+| **AI Census** | Interactive U.S. medical school AI competency census |
 | **Publications** | Peer-reviewed scholarship |
 | **Teaching & Talks** | Invited lectures, conference presentations, courses |
 | **CV** | Education, appointments, awards; downloadable PDF |
